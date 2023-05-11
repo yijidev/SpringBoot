@@ -1,12 +1,17 @@
 package com.example.firstproject.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.ToString;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
-// DB가 해당 객체를 인식 가능 - DB가 알 수 있는 규격화된 객체 entity
+@Entity // DB가 해당 객체를 인식 가능 - DB가 알 수 있는 규격화된 객체 entity
+@AllArgsConstructor // 모든 필드에 있는 constructor 생성 - id, title, content를 파라미터로 하는 생성자를 자동으로 만들어줌
+@ToString
+
 public class Article {
 
     @Id // 대표값을 지정! like a 주민등록번호
@@ -19,20 +24,4 @@ public class Article {
     @Column
     private String content;
 
-    //생성자 추가
-    public Article(Long id, String title, String content) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-    }
-
-    // toString 메소드 추가
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                '}';
-    }
 }
