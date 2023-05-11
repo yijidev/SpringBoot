@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
-@Slf4j // 로깅을 위한 골뱅이(어노테이션)
+@Slf4j // 로깅을 위한 어노테이션
 public class ArticleController {
 
     @Autowired // 스프링 부트가 미리 생성해놓은 객체를 가져다가 자동 연결
@@ -35,7 +35,7 @@ public class ArticleController {
         // System.out.println(article.toString()); //DTO가 Entity로 잘 변환됐는지 확인
         /* 폼을 가지고 toEntity라는 메소드를 호출해서 article이라는 타입의 형식으로 반환해옴
         DTO인 form에서 Entity 객체로 변환하는 메소드를 추가하기
-        */
+         */
 
         // 2. Repository에게 Entity를 DB안에 저장하게 함
         Article saved = articleRepository.save(article);
@@ -45,7 +45,6 @@ public class ArticleController {
             1에서 만든 article 데이터를 save
             save된 데이터를 최종적으로 반환
             Article entity 타입으로 saved라는 이름을 가지고 반환
-            8강 13:05
          */
 
 
